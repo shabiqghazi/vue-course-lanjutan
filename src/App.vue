@@ -7,8 +7,9 @@
     <!-- <article-component :class="['article-title', 'article-likes']" id="article-1" title="Tips lolos SNMPTN" :likes="50" :is-published="true" />
     <article-component class="article-title article-likes" id="article-2" title="Prediksi Soal UTBK 2023" :likes="1302" :is-published="true" /> -->
     <!-- <component-c /> -->
-    <button class="btn btn-primary mb-3" @click="showPopup = true">show popup</button>
-    <popup-component v-show="showPopup" @close="closePopup" />
+    <!-- <button class="btn btn-primary mb-3" @click="showPopup = true">show popup</button>
+    <popup-component v-show="showPopup" @close="closePopup" /> -->
+    <input-component v-model="name" />
   </div>
 </template>
 
@@ -16,36 +17,39 @@
 // import GreetComponent from "./components/GreetComponent.vue"
 // import ArticleComponent from "./components/ArticleComponent.vue";
 // import ComponentC from './components/ComponentC.vue'
-import PopupComponent from './components/PopupComponent.vue'
+// import PopupComponent from './components/PopupComponent.vue'
+import InputComponent from "./components/Input.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // GreetComponent,
     // ArticleComponent,
     // ComponentC,
-    PopupComponent,
+    // PopupComponent,
+    InputComponent,
   },
-  data(){
+  data() {
     return {
-      name: 'Anthony Sinisuka Ginting',
-      collegeName: 'Institut Teknologi Bandung',
+      // name: 'Anthony Sinisuka Ginting',
+      // collegeName: 'Institut Teknologi Bandung',
 
-      showPopup: false,
-    }
+      // showPopup: false,
+      name: "",
+    };
   },
-  provide(){
+  provide() {
     return {
-      username: this.name
-    }
+      // username: this.name
+    };
   },
-  methods : {
-    closePopup(data){
-      this.showPopup = false;
-      console.log(data)
-    }
-  }
-}
+  methods: {
+    // closePopup(data){
+    //   this.showPopup = false;
+    //   console.log(data)
+    // }
+  },
+};
 </script>
 
 <style>
