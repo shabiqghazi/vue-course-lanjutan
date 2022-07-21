@@ -12,7 +12,7 @@
     <!-- <input-component v-model="name" /> -->
     <h1 class="mb-4">Slots</h1>
     <div class="col-5">
-      <card-component></card-component>
+      <!-- <card-component></card-component>
       <card-component>
         <p>Shabiq</p>
       </card-component>
@@ -40,7 +40,10 @@
         <template v-slot:card-footer>
           <h4>Card Footer A</h4>
         </template>
-      </card-component>
+      </card-component> -->
+      <gpa-component v-slot="slotProps">
+        {{ slotProps.fullName }} - {{ slotProps.gpa }}
+      </gpa-component>
     </div>
   </div>
 </template>
@@ -51,7 +54,8 @@
 // import ComponentC from './components/ComponentC.vue'
 // import PopupComponent from './components/PopupComponent.vue'
 // import InputComponent from "./components/Input.vue";
-import CardComponent from "./components/Card.vue";
+// import CardComponent from "./components/Card.vue";
+import GpaComponent from "./components/Gpa.vue";
 
 export default {
   name: "App",
@@ -61,7 +65,8 @@ export default {
     // ComponentC,
     // PopupComponent,
     // InputComponent,
-    CardComponent,
+    // CardComponent,
+    GpaComponent,
   },
   data() {
     return {
