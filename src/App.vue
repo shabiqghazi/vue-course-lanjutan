@@ -6,33 +6,44 @@
     <greet-component :name="name" :college-name="collegeName" /> -->
     <!-- <article-component :class="['article-title', 'article-likes']" id="article-1" title="Tips lolos SNMPTN" :likes="50" :is-published="true" />
     <article-component class="article-title article-likes" id="article-2" title="Prediksi Soal UTBK 2023" :likes="1302" :is-published="true" /> -->
-    <component-c />
+    <!-- <component-c /> -->
+    <button class="btn btn-primary mb-3" @click="showPopup = true">show popup</button>
+    <popup-component v-show="showPopup" @close="closePopup" />
   </div>
 </template>
 
 <script>
 // import GreetComponent from "./components/GreetComponent.vue"
 // import ArticleComponent from "./components/ArticleComponent.vue";
-import ComponentC from './components/ComponentC.vue'
+// import ComponentC from './components/ComponentC.vue'
+import PopupComponent from './components/PopupComponent.vue'
 
 export default {
   name: 'App',
   components: {
     // GreetComponent,
     // ArticleComponent,
-    ComponentC
+    // ComponentC,
+    PopupComponent,
   },
   data(){
     return {
       name: 'Anthony Sinisuka Ginting',
-      collegeName: 'Institut Teknologi Bandung'
+      collegeName: 'Institut Teknologi Bandung',
+
+      showPopup: false,
     }
   },
   provide(){
     return {
       username: this.name
     }
-      
+  },
+  methods : {
+    closePopup(data){
+      this.showPopup = false;
+      console.log(data)
+    }
   }
 }
 </script>
