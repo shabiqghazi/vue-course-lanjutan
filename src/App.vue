@@ -10,9 +10,9 @@
     <!-- <button class="btn btn-primary mb-3" @click="showPopup = true">show popup</button>
     <popup-component v-show="showPopup" @close="closePopup" /> -->
     <!-- <input-component v-model="name" /> -->
-    <h1 class="mb-4">Slots</h1>
-    <div class="col-5">
-      <!-- <card-component></card-component>
+    <!-- <h1 class="mb-4">Slots</h1>
+    <div class="col-5"> -->
+    <!-- <card-component></card-component>
       <card-component>
         <p>Shabiq</p>
       </card-component>
@@ -41,10 +41,15 @@
           <h4>Card Footer A</h4>
         </template>
       </card-component> -->
-      <gpa-component v-slot="slotProps">
+    <!-- <gpa-component v-slot="slotProps">
         {{ slotProps.fullName }} - {{ slotProps.gpa }}
-      </gpa-component>
-    </div>
+      </gpa-component> -->
+    <!-- </div> -->
+    <h1 class="mb-4">Component Styles</h1>
+    <h3>Shabiq Ghazi Arkaan</h3>
+    <child-styles>
+      <h3>Fajar Alfian</h3>
+    </child-styles>
   </div>
 </template>
 
@@ -55,7 +60,8 @@
 // import PopupComponent from './components/PopupComponent.vue'
 // import InputComponent from "./components/Input.vue";
 // import CardComponent from "./components/Card.vue";
-import GpaComponent from "./components/Gpa.vue";
+// import GpaComponent from "./components/Gpa.vue";
+import ChildStyles from "./components/ChildStyles.vue";
 
 export default {
   name: "App",
@@ -66,7 +72,8 @@ export default {
     // PopupComponent,
     // InputComponent,
     // CardComponent,
-    GpaComponent,
+    // GpaComponent,
+    ChildStyles,
   },
   data() {
     return {
@@ -90,12 +97,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+h3 {
+  color: cadetblue;
 }
 </style>
