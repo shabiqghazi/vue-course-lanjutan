@@ -45,11 +45,24 @@
         {{ slotProps.fullName }} - {{ slotProps.gpa }}
       </gpa-component> -->
     <!-- </div> -->
-    <h1 class="mb-4">Component Styles</h1>
+    <!-- <h1 class="mb-4">Component Styles</h1>
     <h3>Shabiq Ghazi Arkaan</h3>
     <child-styles>
       <h3>Fajar Alfian</h3>
-    </child-styles>
+    </child-styles> -->
+
+    <h1>Dynamic Component</h1>
+    <button class="btn btn-primary m-1" @click="activeTab = 'TabA'">
+      Tab A
+    </button>
+    <button class="btn btn-primary m-1" @click="activeTab = 'TabB'">
+      Tab B
+    </button>
+    <button class="btn btn-primary m-1" @click="activeTab = 'TabC'">
+      Tab C
+    </button>
+
+    <component :is="activeTab" />
   </div>
 </template>
 
@@ -61,7 +74,10 @@
 // import InputComponent from "./components/Input.vue";
 // import CardComponent from "./components/Card.vue";
 // import GpaComponent from "./components/Gpa.vue";
-import ChildStyles from "./components/ChildStyles.vue";
+// import ChildStyles from "./components/ChildStyles.vue";
+import TabA from "./components/TabA.vue";
+import TabB from "./components/TabB.vue";
+import TabC from "./components/TabC.vue";
 
 export default {
   name: "App",
@@ -73,7 +89,10 @@ export default {
     // InputComponent,
     // CardComponent,
     // GpaComponent,
-    ChildStyles,
+    // ChildStyles,
+    TabA,
+    TabB,
+    TabC,
   },
   data() {
     return {
@@ -81,6 +100,7 @@ export default {
       // collegeName: 'Institut Teknologi Bandung',
       // showPopup: false,
       // name: "",
+      activeTab: "TabA",
     };
   },
   provide() {
