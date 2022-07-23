@@ -1,8 +1,15 @@
 <template>
   <div>
-    <div class="card">
+    <div class="card col-6">
       <div class="card-body">
         <p>Tab C</p>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nama"
+          aria-label="default input example"
+          v-model="name"
+        />
       </div>
     </div>
   </div>
@@ -11,6 +18,11 @@
 <script>
 export default {
   name: "TabC",
+  data() {
+    return {
+      name: "",
+    };
+  },
 };
 </script>
 

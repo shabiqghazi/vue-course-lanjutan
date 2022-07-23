@@ -62,7 +62,9 @@
       Tab C
     </button>
 
-    <component :is="activeTab" />
+    <keep-alive>
+      <component :is="activeTab" />
+    </keep-alive>
   </div>
 </template>
 
