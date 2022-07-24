@@ -51,7 +51,7 @@
       <h3>Fajar Alfian</h3>
     </child-styles> -->
 
-    <h1>Dynamic Component</h1>
+    <!-- <h1>Dynamic Component</h1>
     <button class="btn btn-primary m-1" @click="activeTab = 'TabA'">
       Tab A
     </button>
@@ -64,7 +64,10 @@
 
     <keep-alive>
       <component :is="activeTab" />
-    </keep-alive>
+    </keep-alive> -->
+    <teleport to="#portal-root">
+      <portal-component />
+    </teleport>
   </div>
 </template>
 
@@ -77,9 +80,10 @@
 // import CardComponent from "./components/Card.vue";
 // import GpaComponent from "./components/Gpa.vue";
 // import ChildStyles from "./components/ChildStyles.vue";
-import TabA from "./components/TabA.vue";
-import TabB from "./components/TabB.vue";
-import TabC from "./components/TabC.vue";
+// import TabA from "./components/TabA.vue";
+// import TabB from "./components/TabB.vue";
+// import TabC from "./components/TabC.vue";
+import PortalComponent from "./components/PortalComponent.vue";
 
 export default {
   name: "App",
@@ -92,9 +96,10 @@ export default {
     // CardComponent,
     // GpaComponent,
     // ChildStyles,
-    TabA,
-    TabB,
-    TabC,
+    // TabA,
+    // TabB,
+    // TabC,
+    PortalComponent,
   },
   data() {
     return {
@@ -102,7 +107,7 @@ export default {
       // collegeName: 'Institut Teknologi Bandung',
       // showPopup: false,
       // name: "",
-      activeTab: "TabA",
+      // activeTab: "TabA",
     };
   },
   provide() {
